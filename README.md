@@ -21,7 +21,7 @@ The repository supports two modes of operation:
 
 ## Features
 
-- **Risk Retrieval**: Retrieve top-k risks in structured format from a dataset of model cards based on model descriptions.
+- **Risk Retrieval and Generations**: Retrieve top-k risks and generate in a structured format from a dataset of model cards based on model descriptions.
 - **Embeddings Support**: Automatically compute embeddings for new datasets to enable efficient retrieval.
 
 
