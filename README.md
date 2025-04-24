@@ -100,7 +100,7 @@ if __name__ == "__main__":
 ```
 
 ### Embeddings
-Embeddings are computed using the BAAI/bge-large-en-v1.5 model and stored in the embeddings/ directory.
+Embeddings are computed using the BAAI/bge-large-en-v1.5 model and stored in the embeddings/ directory. Change the retriever_model to generate embeddings using any other model.
 
 ## Coming Soon
 - Support to include risks from AI incidents dataset
