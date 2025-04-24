@@ -1,0 +1,69 @@
+You are provided in input with cardID and a section written by an AI developer from Risks, Bias and Limitations section of an AI model card:
+cardID: "{}", section: "{}".
+
+Tasks:
+
+1) Identify Relevance: Determine for each section whether it discusses the AI risks and potential solutions to mitigate them. Provide a response as Yes, No, or Unclear. If the answer is Yes, continue with the next steps; else, you will output empty "Risks and Mitigations" in the output JSON.
+
+2) Analyze: Identify  all the subtexts in the section that can be categorized into - "RISKS",  "MITIGATIONS", or "MIX OF BOTH". Classify each such subtext into one of the provided three types. This subtext must match the exact sentences in the input section and is used as a reference.
+
+3) Split: For the each reference, identify unique risks and mitigations. Classify each into one of the two types "RISKS" or "MITIGATIONS".
+It is very important that each risk or mitigation identified be formatted like this: Verb + Object + [Explanation], and describes one unique risk/mitigation, is concise, consisting of one clear, to-the-point sentence, with up to maximum of 20 words. Specifically, start a risk with an action verb in active present tense (e.g., undermines, discriminates, infringes, reduces, increases etc., but NOT potentially) followed by the object and the reason in case it is not obvious and requires an explanation. Start a mitigation with verb in present tense, base form (e.g., perform, inform, investigate). Also, we want these descriptions to be read by broad public who does not have a deep knowledge about AI technology. Do not change the meaning of the concrete risk. For example, if it says the model does not works in a particular setting then you say it underperforms and not discriminates.
+This would NOT be a good output: "Potentially undermines the right to privacy if the facial recognition data is not properly secured." while this is good: "Undermines the right to privacy if the facial recognition data is not properly secured.". This would NOT be a good output: "Affects all fined tuned versions of the model." as it does not specify what the risk is; instead "Transfers all the <specific risks from reference like bias, unrepresentative data> to the inherited models" is better. "Evaluations surface potential risks in use cases." is a bad output, instead specify the potential risks from the reference.
+Other examples of well-formatted risks:
+    * Underperforms on non-English languages 
+    * Discriminates against certain players, such as women or those from certain ethnic backgrounds.
+    * Undermines the safety and security when model is deployed without thorough in-domain testing.
+Examples of well-formatted mitigations:
+    * Perform thorough in-domain testing
+    * Update model card for models using pretrained models
+    * Inform indirect users when the content they're working with is created by the LLM.
+
+Output Format: Ensure your output strictly follows this JSON structure.
+
+{{
+    "cardID": "<Card ID>",
+    "section": {{
+        "about risks, bias or mitigations": ["Yes"/"No"/"Unclear"],
+        "risks_and_mitigations": 
+    [
+        {{
+            "reference_text": "Reference subtext 1 from <section>",
+            "type": ["RISKS", "MITIGATIONS", "MIX OF BOTH"],
+            "splits": [
+                {{
+                "unique_risk_mitigation": "Unique risk/mitigation 1 in identified reference",
+                "type": ["RISKS", "MITIGATIONS"]
+                }},
+                ...
+                {{
+                "unique_risk_mitigation": "Unique risk/mitigation N in identified reference",
+                "Type": ["RISKS", "MITIGATIONS"]
+                }},
+            ]
+        }},
+        ...
+        {{
+            "reference_text": "Reference subtext N from <section>",
+            "type": ["RISKS", "MITIGATIONS", "MIX OF BOTH"],
+            "splits": [
+                {{
+                "unique_risk_mitigation": "Unique risk/mitigation 1 in identified reference",
+                "type": ["RISKS", "MITIGATIONS"]
+                }},
+                ...
+                {{
+                "unique_risk_mitigation": "Unique risk/mitigation N in identified reference",
+                "type": ["RISKS", "MITIGATIONS"]
+                }},
+            ]
+        }},
+        ...
+    ]
+    }}
+}}
+
+
+Important Notes: Do not report your reasoning steps or any preamble like 'Here is the output', ONLY the JSON result. In scenarios where there are no sentences mentioned, provide an empty JSON array for those sections.
+
+*** Double Check your output that it contains only the requested JSON and nothing else. ***
