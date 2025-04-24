@@ -41,6 +41,10 @@ The repository supports two modes of operation:
    ```bash
    pip install -r requirements.txt
    ```
+4.  Ensure your Hugging Face token is available as an environment variable:  
+   ```bash
+   export HUGGINGFACE_TOKEN="your_token_here"
+   ```  
 
 ## Usage
 
