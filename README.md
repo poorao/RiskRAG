@@ -12,11 +12,10 @@ Project details available at: [https://social-dynamics.net/ai-risks/card/](https
 The framework consists of two main components:
 
 1. **Retriever**: Retrieves relevant risk sections from a pre-existing dataset of model cards and descriptions from AI incidents.
-2. **Generator**: Generates risks in the desired standardized format of
-verb + object + [explanation], starting with an action verb.
+2. **Generator**: Generates risks in the desired standardized format of verb + object + [explanation], starting with an action verb.
 
 The repository supports two modes of operation:
-- **Retriever-only mode**: We provide a dataset of model cards (~2100 cards with risk sections) with risks already desired standard format in `data/cards_with_formatted_risks.csv`. You can directly retrieve risks using the retriever. This is to avoid additional environmental offsets by running LLMs again on the same data. 
+- **Retriever-only mode**: We provide a dataset of model cards with risks already pre-formatted in the desired standard at `data/cards_with_formatted_risks.csv`. You can directly retrieve risks using the retriever without needing to run language models again, minimising environmental impact and computational overhead. 
 - **Retriever + Generator mode**: For new datasets, the framework generates risks in standard format using the generator and creates embeddings for efficient retrieval.
 
 ## Features
@@ -41,7 +40,7 @@ The repository supports two modes of operation:
    ```bash
    pip install -r requirements.txt
    ```
-4.  Ensure your Hugging Face token is available as an environment variable:  
+4. Ensure your Hugging Face token is available as an environment variable:  
    ```bash
    export HUGGINGFACE_TOKEN="your_token_here"
    ```  
