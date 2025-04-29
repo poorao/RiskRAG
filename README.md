@@ -6,6 +6,7 @@ RiskRAG is a repository associated with the CHI 2025 paper **"RiskRAG: A Data-Dr
 [![arXiv](https://img.shields.io/badge/arXiv-2504.08952-<COLOR>.svg)](https://arxiv.org/pdf/2504.08952)
 
 Project Webpage: [https://social-dynamics.net/ai-risks/card/](https://social-dynamics.net/ai-risks/card/)
+
 All supplementary materials: https://doi.org/10.17605/OSF.IO/CHJGP
 
 ## Overview
