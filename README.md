@@ -2,10 +2,11 @@
 
 RiskRAG is a repository associated with the CHI 2025 paper **"RiskRAG: A Data-Driven Solution for Improved AI Model Risk Reporting"**. This is a data-drive solution that uses a retrieval-augmented generation framework for AI model risk reporting. RiskRAG is designed to support developers and practitioners in identifying risks of AI models in understandable, clear language along with associated mitigations strategies to produce an actionable risk report. 
 
-Project details available at: [https://social-dynamics.net/ai-risks/card/](https://social-dynamics.net/ai-risks/card/)
-
 [![Paper](https://img.shields.io/badge/paper-ACM%20DOI%3A10.1145%2F3706598.3713979-blue)](https://dl.acm.org/doi/10.1145/3706598.3713979)
 [![arXiv](https://img.shields.io/badge/arXiv-2504.08952-<COLOR>.svg)](https://arxiv.org/pdf/2504.08952)
+
+Project Webpage: [https://social-dynamics.net/ai-risks/card/](https://social-dynamics.net/ai-risks/card/)
+All supplementary materials: https://doi.org/10.17605/OSF.IO/CHJGP
 
 ## Overview
 
